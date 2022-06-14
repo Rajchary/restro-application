@@ -50,11 +50,11 @@ CMD [ "/opt/tomcat/bin/catalina.sh", "run" ]
 ```sh
 mvn validate compile package
 docker build -t restro-application .
-docker image tag restro-application  niranjanchavan/restro-application:latest
+docker image tag restro-application  chary1825/restro-application:latest
 ls
 docker image ls
 docker login
-docker push niranjanchavan/restro-application
+docker push chary1825/restro-application
 ```
 > Creating cluster
 ![Creating cluster](.ignore/1.PNG)
@@ -100,8 +100,8 @@ Creating a application load balancer and creating a target group  and adding tha
          - "main"
 
     env:
-     AWS_REGION: ap-south-1
-     ECS_SERVICE: app-service
+     AWS_REGION: us-east-1
+     ECS_SERVICE: restro-service
      ECS_CLUSTER: restro
      CONTAINER_NAME: restro-app
 
